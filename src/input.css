@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-main{
-    background-color: #FFFAFF;
-}
-.bg-header{
-    background-image: url("../assets/images/bg_image_small.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
 .outfit{
     font-family: 'Outfit', sans-serif;
 }
