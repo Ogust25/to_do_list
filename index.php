@@ -15,26 +15,20 @@
     <header class="w-screen h-1/4 flex items-end justify-center">
         <div class="w-5/6 lg:w-1/3 flex flex-col justify-between pb-5">
             <h1 class="text-2xl text-white font-bold pb-5 pt-20">A Faire</h1>
-            <div class="bg-white py-4 px-2 rounded-lg flex items-center">
+            <form action="./php/add_tache.php" method="post" class="bg-white py-4 px-2 rounded-lg flex items-center">
                 <img class="px-2" src="./assets/images/empty_check.png" alt="checkbox vide">
-                <input type="text" placeholder="Ajouter une tâche">
-            </div>
+                <input name="data_name" type="text" placeholder="Ajouter une tâche">
+            </form>
         </div>
     </header>
     <main class="w-screen h-full flex flex-col items-center">
-       <section class="w-5/6 lg:w-1/3 flex flex-col lg:shadow-md lg:rounded-lg">
-            <!-- Boite exemple checked -->
-            <div class="bg-white py-4 pl-5 pr-2 flex items-center border-b shadow-md lg:shadow-none">
-                <img class="pr-3" src="./assets/images/filled_check.png" alt="checkbox vide">
-                <p class="text-gray-300 line-through">Trouver un stage</p>
-            </div>
-            <!-- Boite exemple non-checked -->
-            <div class="bg-white py-4 pl-5 pr-2 flex items-center border-b shadow-md lg:shadow-none">
-                <img class="pr-3" src="./assets/images/empty_check.png" alt="checkbox vide">
-                <p class="text-gray-700">Trouver un stage</p>
-            </div>
+        <section class="w-5/6 lg:w-1/3 flex flex-col lg:shadow-md lg:rounded-lg">
+
+            <?php include "./php/view_all.php"; ?>
+
             <div class="lg:flex lg:justify-between lg:bg-white lg:rounded-lg">
                 <!-- Boite nombre restant -->
+                <?php $i = ""; ?>
                 <div class="bg-white py-4 pl-5 pr-2 flex items-center lg:rounded-br-none rounded-b-lg shadow-md lg:shadow-none">
                     <p class="text-gray-400">5 tâches restantes</p>
                 </div>
@@ -45,7 +39,7 @@
                     <p class="font-bold lg:px-5">Finies</p>
                 </div>
             </div>
-       </section>
+        </section>
     </main>
     <footer>
         <p class="py-10 text-gray-500">August Gros 2022 - Made with &#36;<!-- &hearts; --></p>
