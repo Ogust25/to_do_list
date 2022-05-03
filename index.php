@@ -24,19 +24,20 @@
     <main class="w-screen h-full flex flex-col items-center">
         <section class="w-5/6 lg:w-1/3 flex flex-col lg:shadow-md lg:rounded-lg">
 
-            <?php include "./php/view_all.php"; ?>
-
+            <!-- AXAJ -->
+            <div id="testNode"></div>
+            
             <div class="lg:flex lg:justify-between lg:bg-white lg:rounded-lg">
                 <!-- Boite nombre restant -->
                 <?php $i = ""; ?>
                 <div class="bg-white py-4 pl-5 pr-2 flex items-center lg:rounded-br-none rounded-b-lg shadow-md lg:shadow-none">
-                    <p class="text-gray-400">5 tâches restantes</p>
+                    <p class="text-gray-400"><?= $count; ?> tâches restantes</p>
                 </div>
                 <!-- Boite menu -->
-                <div class="shadow-md lg:shadow-none lg:rounded-t-none lg:rounded-bl-none bg-white py-4 px-2 rounded-lg flex items-center mt-5 lg:mt-0 justify-evenly text-gray-500">
-                    <p class="font-bold">Toutes</p>
-                    <p class="font-bold lg:pl-5">En cours</p>
-                    <p class="font-bold lg:px-5">Finies</p>
+                <div class="shadow-md lg:shadow-none lg:rounded-t-none lg:rounded-bl-none bg-white py-4 px-2 rounded-lg flex items-center mt-5 lg:mt-0 justify-evenly">
+                    <button class="text-gray-500 font-bold" id="btnAll">Toutes</button>
+                    <button class="text-gray-500 font-bold lg:pl-5" id="btnEnCours">En cours</button>
+                    <button class="text-gray-500 font-bold lg:px-5" id="btnFinies">Finies</button>
                 </div>
             </div>
         </section>

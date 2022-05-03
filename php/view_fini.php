@@ -1,5 +1,5 @@
 <?php
-    require_once('./php/login_pdo.php');
+    require_once('../php/login_pdo.php');
     $sql = 'SELECT * FROM taches INNER JOIN categorie WHERE type_tache = id_categorie AND type_tache = 2';
     $query = $db->prepare($sql);
     $query->execute();

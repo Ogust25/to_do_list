@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./index.html"],
+  content: ["./index.php", "./php/view_all.php", "./php/view_enCours.php", "./php/view_fini.php"],
   theme: {
     extend: {
       backgroundSize: {
