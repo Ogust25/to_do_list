@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="shortcut icon" href="./assets/images/filled_check.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/images/filled_check.png" type="image/x-icon">
 </head>
 <body class="h-screen w-screen flex flex-col items-center justify-between bg-main outfit bg-small-custom sm:bg-full-custom bg-phone sm:bg-max bg-no-repeat">
     <header class="w-screen h-1/4 flex items-end justify-center">
@@ -31,11 +31,11 @@
                 <!-- Boite nombre restant -->
                 <?php $i = ""; ?>
                 <div class="bg-white py-4 pl-5 pr-2 flex items-center lg:rounded-br-none rounded-b-lg shadow-md lg:shadow-none">
-                    <p class="text-gray-400"><?= $count; ?> tâches restantes</p>
+                    <p class="text-gray-400">tâches restantes</p>
                 </div>
                 <!-- Boite menu -->
                 <div class="shadow-md lg:shadow-none lg:rounded-t-none lg:rounded-bl-none bg-white py-4 px-2 rounded-lg flex items-center mt-5 lg:mt-0 justify-evenly">
-                    <button class="text-gray-500 font-bold" id="btnAll">Toutes</button>
+                    <button class="text-violet-500 font-bold" id="btnAll">Toutes</button>
                     <button class="text-gray-500 font-bold lg:pl-5" id="btnEnCours">En cours</button>
                     <button class="text-gray-500 font-bold lg:px-5" id="btnFinies">Finies</button>
                 </div>
