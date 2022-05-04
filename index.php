@@ -25,13 +25,13 @@
         <section class="w-5/6 lg:w-1/3 flex flex-col lg:shadow-md lg:rounded-lg">
 
             <!-- AXAJ -->
-            <div id="testNode"></div>
+            <div id="boxAjax"></div>
             
             <div class="lg:flex lg:justify-between lg:bg-white lg:rounded-lg">
                 <!-- Boite nombre restant -->
                 <?php $i = ""; ?>
                 <div class="bg-white py-4 pl-5 pr-2 flex items-center lg:rounded-br-none rounded-b-lg shadow-md lg:shadow-none">
-                    <p class="text-gray-400">tâches restantes</p>
+                    <p class="text-gray-400" id="counter"></p>
                 </div>
                 <!-- Boite menu -->
                 <div class="shadow-md lg:shadow-none lg:rounded-t-none lg:rounded-bl-none bg-white py-4 px-2 rounded-lg flex items-center mt-5 lg:mt-0 justify-evenly">
