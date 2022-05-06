@@ -17,7 +17,7 @@
             <h1 class="text-2xl text-white font-bold pb-5 pt-20">A Faire</h1>
             <form action="./php/add_tache.php" method="post" class="bg-white py-4 px-2 rounded-lg flex items-center">
                 <img class="px-2" src="./assets/images/empty_check.png" alt="checkbox vide">
-                <input name="data_name" type="text" placeholder="Ajouter une tâche">
+                <input class="outline_none" name="data_name" type="text" placeholder="Ajouter une tâche">
             </form>
         </div>
     </header>

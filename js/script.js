@@ -30,28 +30,65 @@ btnFinies.addEventListener("click", function(){
     ajax("./php/view_fini.php");
 })
 
-/* Création des taches en AJAX */
+/* AJAX */
 function ajax(url) {
-    fetch(url)
+
+    fetch(url, {
+        method: "POST",
+    })
     .then(res => res.json())
     .then(data => {
         //console.log(data);
-        boxAjax.replaceChildren();
 
+        /* Supprime la vue actuelle */
+        boxAjax.replaceChildren();
+        
+        /* Création des taches en fonction de la vue choisie */
         data.forEach(e => {
             let div = "";
             let img = "";
             let p = "";
             
             if (e.type_tache == "1") {
-                div= newElem("div", {"class":"bg-white py-4 pl-5 pr-2 flex items-center border-b shadow-md lg:shadow-none"});
+                div= newElem("div", {"class":"w-full bg-white cursor-pointer py-4 pl-5 pr-2 flex items-center border-b shadow-md lg:shadow-none"});
+                div.classList.add("divAjax");
                 img = newElem("img", {"class":"pr-3", "src":e.img, "alt":e.alt_img});
                 p = newElem("p", {"class":"text-gray-700"}, e.name_tache);
             }else{
-                div= newElem("div", {"class":"bg-white py-4 pl-5 pr-2 flex items-center border-b shadow-md lg:shadow-none"});
+                div= newElem("div", {"class":"w-full bg-white cursor-pointer py-4 pl-5 pr-2 flex items-center border-b shadow-md lg:shadow-none"});
+                div.classList.add("divAjax");
                 img = newElem("img", {"class":"pr-3", "src":e.img, "alt":e.alt_img});
                 p = newElem("p", {"class":"text-gray-300 line-through"}, e.name_tache);
             }
+
+            div.addEventListener('click', ()=>{
+
+                /* Indique si la tache et validé ou non */
+                let etat = 0;
+                if (e.type_tache == 1) {
+                    etat = 2;
+                }else{
+                    etat = 1;
+                }
+
+                /* Coche ou decoche la tache */
+                function tacheCheck(url, etat) {
+                    const nom = div.childNodes[2].firstChild.nodeValue;
+                    const form = new FormData();
+                    form.append("name", nom);
+                    form.append("etat", etat);
+
+                    fetch(url, {
+                        method: 'POST',
+                        body: form
+                    })
+                    .then(data => {return data.json()})
+                    .then(data =>{
+                        console.log(data);
+                    })
+                }
+                tacheCheck('./php/check_tache.php', etat);
+            })
 
             placeElem(img, div);
             placeElem(p, div);
@@ -59,7 +96,9 @@ function ajax(url) {
         });
     })
 }
+/* Call pour afficher la vue all au chargement de la page */
 ajax("./php/view_all.php");
+
 
 /* Compteur de tache restante */
 fetch("./php/view_enCours.php")
