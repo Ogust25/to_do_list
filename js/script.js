@@ -102,17 +102,18 @@ function ajax(url) {
                     })
 
                 }
+
+                /* Compteur de tache restante */
                 if (div.getAttribute("data-status") == 1) {
                     div.setAttribute("data-status", "2")
                 }else{
                     div.setAttribute("data-status", "1")
                 }
+
                 let nbrTaches = document.querySelectorAll("[data-status='1']").length;
-                
                 document.querySelector('#counter').childNodes[0].nodeValue = `${nbrTaches} tâches restantes`;
 
                 tacheCheck('./php/check_tache.php', etat, img, alt, classT);
-                console.log(document.querySelector('#counter').childNodes[0].nodeValue);
             })
 
             placeElem(img, div);
@@ -156,7 +157,7 @@ formAdd.addEventListener('submit', (e)=>{
 
 
 
-/* Compteur de tache restante */
+/* Compteur de tache restante depuis la bdd */
 function tacheConteur() {
     fetch("./php/view_enCours.php")
     .then(res => res.json())
@@ -170,6 +171,7 @@ function tacheConteur() {
     });
 }
 tacheConteur();
+
 /* Fonction pour créer et placer des elements */
 function newElem(el, attribut, content=""){
     const newElem = document.createElement(el);
@@ -183,4 +185,9 @@ function newElem(el, attribut, content=""){
 function placeElem(elem, ref, ou=null){
     ref.insertBefore(elem, ou);
 }
+
+new Sortable(boxAjax, {
+    animation: 150,
+    ghostClass: 'blue-background-class'
+});
 

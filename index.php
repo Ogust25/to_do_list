@@ -45,7 +45,8 @@
     <footer>
         <p class="py-10 text-gray-500">August Gros 2022 - Made with &#36;<!-- &hearts; --></p>
     </footer>
+<script src="./js/Sortable.js"></script>    
 <script src="./js/script.js"></script>
-<script src="./js/grabbable.js"></script>
+
 </body>
 </html>
