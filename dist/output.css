@@ -648,6 +648,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.\[data-status\:1\] {
+  data-status: 1;
+}
+
 .outfit{
   font-family: 'Outfit', sans-serif;
 }

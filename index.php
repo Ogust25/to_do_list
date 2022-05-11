@@ -15,9 +15,9 @@
     <header class="w-screen h-1/4 flex items-end justify-center">
         <div class="w-5/6 lg:w-1/3 flex flex-col justify-between pb-5">
             <h1 class="text-2xl text-white font-bold pb-5 pt-20">A Faire</h1>
-            <form action="./php/add_tache.php" method="post" class="bg-white py-4 px-2 rounded-lg flex items-center">
+            <form id="formAdd" method="post" class="bg-white py-4 px-2 rounded-lg flex items-center">
                 <img class="px-2" src="./assets/images/empty_check.png" alt="checkbox vide">
-                <input class="outline_none" name="data_name" type="text" placeholder="Ajouter une tâche">
+                <input id="inputAdd" class="outline_none" name="data_name" type="text" placeholder="Ajouter une tâche">
             </form>
         </div>
     </header>
@@ -46,5 +46,6 @@
         <p class="py-10 text-gray-500">August Gros 2022 - Made with &#36;<!-- &hearts; --></p>
     </footer>
 <script src="./js/script.js"></script>
+<script src="./js/grabbable.js"></script>
 </body>
 </html>
