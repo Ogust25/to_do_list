@@ -100,7 +100,6 @@ function ajax(url) {
                         div.childNodes[1].alt = data[3].alt_tache;
                         div.childNodes[2].classList.value = data[4].classT_tache;
                     })
-
                 }
 
                 /* Compteur de tache restante */
