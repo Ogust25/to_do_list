@@ -4,7 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
     <title>To Do List</title>
+    <meta name="title" content="To Do List">
+    <meta name="description" content="Site de tache à faire.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="To Do List">
+    <meta property="og:description" content="Site de tache à faire.">
+    <meta property="og:image" content="https://augustg.promo-106.codeur.online/to_do_list/">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="To Do List">
+    <meta property="twitter:description" content="Site de tache à faire.">
+    <meta property="twitter:image" content="https://augustg.promo-106.codeur.online/to_do_list/">
+    <!-- Link -->
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

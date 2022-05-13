@@ -60,14 +60,14 @@ function ajax(url) {
                 p = newElem("p", {"class":"text-gray-300 line-through"}, e.name_tache);
             }
 
-            div.addEventListener('click', ()=>{
+            div.addEventListener('click', function(){
                 /* Indique si la tache et validé ou non */
                 let etat = 0;
                 let img = "";
                 let alt = "";
                 let classT = "";
-                
-                if (e.type_tache == 1) {
+
+                if (this.getAttribute('data-status') == 1) {
                     etat = 2;
                     img = "./assets/images/filled_check.png";
                     alt = "logo de tache terminé";
@@ -95,13 +95,13 @@ function ajax(url) {
                     })
                     .then(data => {return data.json()})
                     .then(data =>{
-                        //console.log(data);
+
                         div.childNodes[1].src = data[2].img_tache;
                         div.childNodes[1].alt = data[3].alt_tache;
                         div.childNodes[2].classList.value = data[4].classT_tache;
                     })
                 }
-
+                
                 /* Compteur de tache restante */
                 if (div.getAttribute("data-status") == 1) {
                     div.setAttribute("data-status", "2")
@@ -161,7 +161,7 @@ function tacheConteur() {
     fetch("./php/view_enCours.php")
     .then(res => res.json())
     .then(data => {
-        //console.log(data);
+       
         let count = 0;
         for (let i = 0; i < data.length; i++) {
             count++;
